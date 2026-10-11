@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-[#070D18] dark:text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 transition-colors duration-300;
+  }
+}
+
+/* Custom safety marking pattern helpers */
+.safety-stripe-bar {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FFB800,
+    #FFB800 14px,
+    #0F1E38 14px,
+    #0F1E38 28px
+  );
+}
+
+.safety-stripe-bar-light {
+  background: repeating-linear-gradient(
+    -45deg,
+    #F59E0B,
+    #F59E0B 14px,
+    #1E293B 14px,
+    #1E293B 28px
+  );
+}
+
+.glass-panel {
+  @apply bg-white/90 dark:bg-[#0F1E38]/80 backdrop-blur-md border border-slate-200/90 dark:border-white/10 shadow-sm dark:shadow-none;
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  transform: translateY(-4px);
+  @apply border-amber-500/60 dark:border-amber-400/50 shadow-xl shadow-amber-500/10 dark:shadow-amber-500/15;
+}
+
